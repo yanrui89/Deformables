@@ -1,0 +1,173 @@
+<?xml version="0.0" ?>
+<robot name="box.urdf">
+
+  <link name="baseLink">
+    <contact>
+      <lateral_friction value="1.0"/>
+      <rolling_friction value="0.0001"/>
+      <inertia_scaling value="3.0"/>
+    </contact>
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+       <mass value=".01"/>
+       <inertia ixx="1" ixy="0" ixz="0" iyy="1" iyz="0" izz="1"/>
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+         <box size="0.3 0.01 0.25"/>
+      </geometry>
+      <material name="red">
+        <color rgba="1 0.3412 0.3490 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+	 	    <box size="0.3 0.01 0.25"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="baseLink1">
+    <contact>
+      <lateral_friction value="1.0"/>
+      <rolling_friction value="0.0001"/>
+      <inertia_scaling value="3.0"/>
+    </contact>
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+       <mass value=".01"/>
+       <inertia ixx="1" ixy="0" ixz="0" iyy="1" iyz="0" izz="1"/>
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+         <box size="0.3 0.01 0.05"/>
+      </geometry>
+      <material name="red">
+        <color rgba="1 0.3412 0.3490 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+	 	    <box size="0.3 0.01 0.05"/>
+      </geometry>
+    </collision>
+  </link>
+
+
+  <link name="baseLink2">
+    <contact>
+      <lateral_friction value="1.0"/>
+      <rolling_friction value="0.0001"/>
+      <inertia_scaling value="3.0"/>
+    </contact>
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+       <mass value=".01"/>
+       <inertia ixx="1" ixy="0" ixz="0" iyy="1" iyz="0" izz="1"/>
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+         <box size="0.3 0.01 0.05"/>
+      </geometry>
+      <material name="red">
+        <color rgba="1 0.3412 0.3490 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+	 	    <box size="0.3 0.01 0.05"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="baseLink3">
+    <contact>
+      <lateral_friction value="1.0"/>
+      <rolling_friction value="0.0001"/>
+      <inertia_scaling value="3.0"/>
+    </contact>
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+       <mass value=".01"/>
+       <inertia ixx="1" ixy="0" ixz="0" iyy="1" iyz="0" izz="1"/>
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+         <box size="0.3 0.01 0.09"/>
+      </geometry>
+      <material name="red">
+        <color rgba="1 0.3412 0.3490 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+	 	    <box size="0.3 0.01 0.09"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="baseLink4">
+    <contact>
+      <lateral_friction value="1.0"/>
+      <rolling_friction value="0.0001"/>
+      <inertia_scaling value="3.0"/>
+    </contact>
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+       <mass value=".01"/>
+       <inertia ixx="1" ixy="0" ixz="0" iyy="1" iyz="0" izz="1"/>
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+         <box size="0.3 0.01 0.09"/>
+      </geometry>
+      <material name="red">
+        <color rgba="1 0.3412 0.3490 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+	 	    <box size="0.3 0.01 0.09"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="base_joint" type="fixed">
+    <origin rpy="-1.57079632679 0 0" xyz="0 -0.025 0.1"/>
+    <parent link="baseLink"/>
+    <child link="baseLink1"/>
+    <axis xyz="0 0 1"/>
+  </joint>
+
+  <joint name="base_joint1" type="fixed">
+    <origin rpy="-1.57079632679 0 0" xyz="0 -0.025 -0.1"/>
+    <parent link="baseLink"/>
+    <child link="baseLink2"/>
+    <axis xyz="0 0 1"/>
+  </joint>
+
+  <joint name="base_joint2" type="fixed">
+    <origin rpy="-1.57079632679 0 0" xyz="0 0.01 -0.02"/>
+    <parent link="baseLink1"/>
+    <child link="baseLink3"/>
+    <axis xyz="0 0 1"/>
+  </joint>
+
+  <joint name="base_joint3" type="fixed">
+    <origin rpy="-1.57079632679 0 0" xyz="0 -0.01 -0.02"/>
+    <parent link="baseLink2"/>
+    <child link="baseLink4"/>
+    <axis xyz="0 0 1"/>
+  </joint>
+
+</robot>
